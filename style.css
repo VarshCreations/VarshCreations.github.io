@@ -1,83 +1,88 @@
+/* Reset & base styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
+/* Sticky navbar */
 .navbar {
-  background-color: #222;
+  position: sticky;
+  top: 0;
+  background: #222;
   color: white;
-  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
+  padding: 15px 20px;
   z-index: 1000;
 }
 
 .logo {
+  font-size: 20px;
   font-weight: bold;
-  font-size: 18px;
 }
 
+/* Hamburger menu */
 .hamburger {
-  cursor: pointer;
-  width: 25px;
-  height: 20px;
+  width: 30px;
+  height: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
 }
 
-.hamburger div {
-  height: 3px;
-  background-color: white;
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: white;
   transition: 0.4s;
+  border-radius: 2px;
 }
 
-/* Animate hamburger to X */
-.change .bar1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
+/* Hamburger to X */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
-.change .bar2 {
+
+.hamburger.open span:nth-child(2) {
   opacity: 0;
 }
-.change .bar3 {
-  transform: rotate(45deg) translate(-5px, -6px);
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Sidebar menu */
+/* Sidebar */
 .sidebar {
-  height: 100%;
-  width: 0;
   position: fixed;
   top: 0;
-  right: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.3s;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #333;
   padding-top: 60px;
+  transition: right 0.3s ease;
   z-index: 999;
 }
 
-.sidebar.open {
-  width: 250px;
-}
-
 .sidebar a {
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 18px;
-  color: white;
   display: block;
-  transition: 0.3s;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
 }
 
 .sidebar a:hover {
-  background-color: #575757;
+  background-color: #444;
 }
 
-/* Main content */
+.sidebar.open {
+  right: 0;
+}
+
+/* Page content */
 .content {
   padding: 20px;
 }
