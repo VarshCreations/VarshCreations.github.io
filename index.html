@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Varsh | GitHub Page</title>
 
-  <!-- ✅ Google Font -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
-  <!-- ✅ External CSS file -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -42,17 +42,13 @@
     function toggleMenu(icon) {
       icon.classList.toggle("open");
       const sidebar = document.getElementById("mySidebar");
-      if (sidebar.style.width === "250px") {
-        sidebar.style.width = "0";
-      } else {
-        sidebar.style.width = "250px";
-      }
+      sidebar.classList.toggle("open");
     }
 
     function toggleMenuFromLink() {
       const icon = document.querySelector(".hamburger");
       const sidebar = document.getElementById("mySidebar");
-      sidebar.style.width = "0";
+      sidebar.classList.remove("open");
       icon.classList.remove("open");
     }
   </script>
