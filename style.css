@@ -54,17 +54,21 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Sidebar */
+/* Sidebar (from the left) */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px;
+  left: -250px; /* 👈 slide from the left */
   width: 250px;
   height: 100%;
   background: #333;
   padding-top: 60px;
-  transition: right 0.3s ease;
+  transition: left 0.3s ease; /* 👈 animate left */
   z-index: 999;
+}
+
+.sidebar.open {
+  left: 0; /* 👈 show sidebar */
 }
 
 .sidebar a {
@@ -76,10 +80,6 @@ body {
 
 .sidebar a:hover {
   background-color: #444;
-}
-
-.sidebar.open {
-  right: 0;
 }
 
 /* Page content */
