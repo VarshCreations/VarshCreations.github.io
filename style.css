@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Base reset and font */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -41,7 +41,7 @@ body {
   border-radius: 2px;
 }
 
-/* Hamburger to X */
+/* Hamburger transforms to X */
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -54,35 +54,38 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Sidebar */
+/* Sidebar (slides in from left) */
 .sidebar {
+  height: 100%;
+  width: 0;
   position: fixed;
   top: 0;
-  right: -250px;
-  width: 250px;
-  height: 100%;
-  background: #333;
+  left: 0;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.4s ease;
   padding-top: 60px;
-  transition: right 0.3s ease;
   z-index: 999;
 }
 
+.sidebar.open {
+  width: 250px;
+}
+
 .sidebar a {
-  display: block;
-  color: white;
-  padding: 15px 20px;
+  padding: 15px 25px;
   text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
 }
 
 .sidebar a:hover {
   background-color: #444;
 }
 
-.sidebar.open {
-  right: 0;
-}
-
-/* Page content */
+/* Main content */
 .content {
   padding: 20px;
 }
