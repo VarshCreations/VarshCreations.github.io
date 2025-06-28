@@ -1,7 +1,6 @@
 /* Reset and base styles */
 body {
-  margin: 0;
-font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Sticky navbar */
