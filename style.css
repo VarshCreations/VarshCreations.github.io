@@ -1,8 +1,7 @@
 /* Reset & base styles */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400; /* normal text */
+  font-family: Arial, sans-serif;
 }
 
 /* Sticky navbar */
@@ -16,12 +15,11 @@ body {
   align-items: center;
   padding: 15px 20px;
   z-index: 1000;
-  font-weight: 600; /* semi-bold navbar text */
 }
 
 .logo {
   font-size: 20px;
-  font-weight: 600; /* semi-bold logo */
+  font-weight: bold;
 }
 
 /* Hamburger menu */
@@ -46,7 +44,6 @@ body {
 /* Hamburger to X */
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
-  transform-origin: center;
 }
 
 .hamburger.open span:nth-child(2) {
@@ -54,25 +51,20 @@ body {
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-  transform-origin: center;
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Sidebar (slide in from left) */
+/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px;
+  right: -250px;
   width: 250px;
   height: 100%;
   background: #333;
   padding-top: 60px;
-  transition: left 0.3s ease;
+  transition: right 0.3s ease;
   z-index: 999;
-}
-
-.sidebar.open {
-  left: 0;
 }
 
 .sidebar a {
@@ -80,21 +72,17 @@ body {
   color: white;
   padding: 15px 20px;
   text-decoration: none;
-  font-weight: 400; /* normal links */
 }
 
 .sidebar a:hover {
   background-color: #444;
 }
 
-/* Headings */
-h1 {
-  font-weight: 700; /* bold */
-  padding: 20px;
+.sidebar.open {
+  right: 0;
 }
 
-/* Paragraphs */
-p {
+/* Page content */
+.content {
   padding: 20px;
-  font-weight: 400; /* normal */
 }
