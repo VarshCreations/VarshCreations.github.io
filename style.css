@@ -18,7 +18,7 @@ body {
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -79,7 +79,7 @@ body {
 }
 
 .sidebar.open {
-  left: 0;
+  right: 0;
 }
 
 /* Page content */
