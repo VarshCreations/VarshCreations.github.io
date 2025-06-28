@@ -1,8 +1,7 @@
 /* Reset and base styles */
 body {
   margin: 0;
-  padding-top: 60px; /* Space for fixed navbar */
-  font-family: Segoe UI, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 /* Sticky navbar */
