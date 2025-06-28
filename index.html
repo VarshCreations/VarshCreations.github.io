@@ -3,52 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varsh | GitHub Page</title>
+  <title>Welcome to Varsh</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Navbar -->
   <div class="navbar">
-    <div>VARSH</div>
+    <div class="logo">VARSH</div>
     <div class="hamburger" onclick="toggleMenu(this)">
-      <span></span>
-      <span></span>
-      <span></span>
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
     </div>
   </div>
 
   <!-- Sidebar -->
   <div id="mySidebar" class="sidebar">
-    <a href="#" onclick="toggleMenuFromLink()">Home</a>
-    <a href="#" onclick="toggleMenuFromLink()">Order From Us!</a>
-    <a href="#" onclick="toggleMenuFromLink()">About</a>
-    <a href="#" onclick="toggleMenuFromLink()">Contact</a>
+    <a href="#">Home</a>
+    <a href="#">Order From Us!</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
   </div>
 
-  <!-- Page Content -->
-  <h1>Welcome to Varsh</h1>
-  <p>Above me I am going to put an image of Varsh...</p>
-  <p>Scroll down to see the sticky navbar stay in place.</p>
-  <p style="height: 1000px;">(Extra content to scroll)</p>
+  <!-- Page content -->
+  <div class="content">
+    <h1>Welcome to Varsh</h1>
+    <p>Above me I am going to put an image of Varsh...</p>
+    <p>Scroll down to see the sticky navbar stay in place.</p>
+    <p style="margin-top: 1000px;">(Extra content to scroll)</p>
+  </div>
 
-  <!-- JavaScript -->
+  <!-- Script -->
   <script>
-    function toggleMenu(icon) {
-      icon.classList.toggle("open");
+    function toggleMenu(x) {
+      x.classList.toggle("change");
       const sidebar = document.getElementById("mySidebar");
-      if (sidebar.style.width === "250px") {
-        sidebar.style.width = "0";
-      } else {
-        sidebar.style.width = "250px";
-      }
-    }
-
-    function toggleMenuFromLink() {
-      const icon = document.querySelector(".hamburger");
-      const sidebar = document.getElementById("mySidebar");
-      sidebar.style.width = "0";
-      icon.classList.remove("open");
+      sidebar.classList.toggle("open");
     }
   </script>
 
