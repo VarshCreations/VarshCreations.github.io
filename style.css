@@ -4,7 +4,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Sticky navbar */
+/* Sticky navbar */ 
 .navbar {
   position: sticky;
   top: 0;
