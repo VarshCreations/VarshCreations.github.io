@@ -28,9 +28,7 @@ body {
   height: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
+  justify-content: space-between;
   cursor: pointer;
 }
 
@@ -41,12 +39,11 @@ body {
   background: white;
   border-radius: 2px;
   transition: all 0.4s ease;
-  transform-origin: center; /* for balanced X */
+  transform-origin: left center; /* rotate around left edge */
 }
 
-/* Hamburger transforms to X */
 .hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(3px, 3px);
+  transform: rotate(45deg);
 }
 
 .hamburger.open span:nth-child(2) {
@@ -54,7 +51,7 @@ body {
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(3px, -3px);
+  transform: rotate(-45deg);
 }
 
 /* Sidebar (left side) */
@@ -86,34 +83,6 @@ body {
 
 .sidebar a:hover {
   background-color: #444;
-}
-
-/* Banner section */
-.banner {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Slide-in animation */
-.slide-in {
-  opacity: 0;
-  transform: translateY(-50px);
-  animation: slideDown 1s ease-out forwards;
-}
-
-@keyframes slideDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Page content */
