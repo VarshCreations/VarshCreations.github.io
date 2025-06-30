@@ -25,20 +25,22 @@ body {
 /* Hamburger menu */
 .hamburger {
   width: 30px;
-  height: 22px;
+  height: 24px;              /* changed from 22 to 24 for better spacing */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;   /* changed from space-between */
+  align-items: center;       /* added for perfect centering */
+  gap: 6px;                  /* new: controls space between bars */
   cursor: pointer;
 }
 
 .hamburger span {
   display: block;
-  height: 4px;
+  height: 3px;               /* changed from 4px to 3px for smoother look */
   width: 100%;
   background: white;
-  transition: 0.4s;
   border-radius: 2px;
+  transition: all 0.4s ease;
 }
 
 /* Hamburger transforms to X */
@@ -51,7 +53,7 @@ body {
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Sidebar (left side) */
