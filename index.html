@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Varsh | Home</title>
 
   <!-- Google Font -->
@@ -35,35 +35,38 @@
   <!-- Page content -->
   <div class="content">
 
-    <div class="card card-1 animate-on-scroll">
-      <h2>Order Something Custom From Us!</h2>
-      <p>We bring your ideas to life with premium custom designs.</p>
-      <a href="order.html" class="btn btn-black">Order Now</a>
-    </div>
+    <!-- Hero Section 1 -->
+    <section class="card fade-in">
+      <h2>Order Something Custom</h2>
+      <p>Bring your ideas to life with our personalized design services.</p>
+      <a href="order.html" class="card-btn">Order Now</a>
+    </section>
 
-    <div class="card card-2 animate-on-scroll">
-      <h2>About Us</h2>
-      <p>Discover our story and passion for creative custom work.</p>
-      <a href="about.html" class="btn btn-black">Learn More</a>
-    </div>
+    <!-- Hero Section 2 -->
+    <section class="card fade-in">
+      <h2>Who We Are</h2>
+      <p>Explore our story and meet the creatives behind the brand.</p>
+      <a href="about.html" class="card-btn">About Us</a>
+    </section>
 
-    <div class="card card-3 animate-on-scroll">
-      <h2>Locations</h2>
-      <p>Find a Varsh location near you for personalized service.</p>
-      <a href="locations.html" class="btn btn-black">See Locations</a>
-    </div>
+    <!-- Hero Section 3 -->
+    <section class="card fade-in">
+      <h2>Find Us Near You</h2>
+      <p>Visit our locations to browse, pick up, or connect in person.</p>
+      <a href="locations.html" class="card-btn">View Locations</a>
+    </section>
 
-    <div class="card card-4 animate-on-scroll">
-      <h2>Contact Us</h2>
-      <p>Questions? Reach out anytime and we'll assist you.</p>
-      <a href="contact.html" class="btn btn-black">Get In Touch</a>
-    </div>
+    <!-- Hero Section 4 -->
+    <section class="card fade-in">
+      <h2>Let’s Stay in Touch</h2>
+      <p>Have questions or need help? Reach out to our friendly team.</p>
+      <a href="contact.html" class="card-btn">Contact Us</a>
+    </section>
 
   </div>
 
   <!-- JavaScript -->
   <script>
-    // Hamburger toggle functions
     function toggleMenu(icon) {
       icon.classList.toggle("open");
       const sidebar = document.getElementById("mySidebar");
@@ -77,20 +80,18 @@
       icon.classList.remove("open");
     }
 
-    // Scroll animation using Intersection Observer
-    document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target); // Animate once
-          }
-        });
-      }, { threshold: 0.2 });
-
-      document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
+    // Scroll animation
+    const fadeInSections = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
+    }, { threshold: 0.1 });
+
+    fadeInSections.forEach(section => {
+      observer.observe(section);
     });
   </script>
 
