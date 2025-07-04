@@ -107,49 +107,38 @@ body {
   padding: 0 20px 60px;
 }
 
-/* Hero Section */
-.hero-section {
-  background: rgba(150, 200, 255, 0.2);
+/* Frosted glass effect for boxes */
+.box-section, .testimonial-section, .hero-section {
+  background: rgba(255, 255, 255, 0.25); /* semi-transparent white */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 60px 30px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.hero-section h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero-section p {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-/* Boxes Style */
-.box-section {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 40px 30px;
   margin-bottom: 50px;
   text-align: center;
   transition: transform 0.3s ease;
+  color: #222;
 }
 
+/* Alternate box shading */
 .box-section.alt {
-  background: #f0f8ff;
+  background: rgba(230, 240, 255, 0.25);
+  border-color: rgba(230, 240, 255, 0.4);
 }
 
+/* Headings */
 .box-heading {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.box-section p {
+/* Paragraph */
+.box-section p, .testimonial-section p, .hero-section p {
   font-size: 1.1rem;
   margin-bottom: 25px;
-  color: #444;
+  color: #222;
 }
 
 /* Button style */
@@ -170,36 +159,13 @@ body {
 }
 
 /* Testimonials */
-.testimonial-section {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
-  padding: 40px 30px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
 .testimonial {
   margin-bottom: 25px;
   font-style: italic;
-  color: #555;
+  color: #222;
 }
 
 .testimonial span {
   display: block;
   margin-top: 8px;
-  font-weight: bold;
-  color: #222;
-}
-
-/* Animation for slide-up */
-.slide-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.slide-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  font-weight
