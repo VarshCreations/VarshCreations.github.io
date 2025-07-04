@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #fff;
+  background: #fafafa;
   color: #222;
 }
 
@@ -100,48 +100,87 @@ body {
   background-color: #444;
 }
 
-/* Page content */
+/* Content area */
 .content {
-  padding: 20px;
-  margin-left: 0; /* no margin since sidebar overlays */
-  transition: margin-left 0.3s ease;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px 80px;
 }
 
-/* Slide-up animation */
-@keyframes slideUpFade {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
+/* Hero section */
 .hero {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .hero.show {
-  animation: slideUpFade 0.8s ease-out forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Image container with background */
-.img-container {
-  background: #f0f0f0;    /* light gray background */
-  padding: 10px;          /* spacing around image */
-  border-radius: 8px;     /* rounded corners */
-  max-width: 100%;        /* responsive */
-  display: inline-block;  /* shrink-wrap */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  color: #222;
 }
 
-.img-container img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px; /* slightly rounded corners */
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+  color: #555;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Secondary button for other sections */
+.btn.btn-secondary {
+  background-color: #555;
+}
+
+.btn.btn-secondary:hover {
+  background-color: #333;
+}
+
+/* Info sections */
+.info {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.info.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #444;
 }
