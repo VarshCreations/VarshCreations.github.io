@@ -102,85 +102,98 @@ body {
 
 /* Content area */
 .content {
-  max-width: 900px;
+  max-width: 960px;
   margin: 40px auto;
   padding: 0 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
 }
 
-/* Hero section */
-.hero {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+/* Card styles - exact square blocks */
+.card {
+  background: white;
+  width: 320px;
+  height: 320px; /* perfect square */
+  border-radius: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  margin: 0 auto;
 }
 
-.hero.show {
+/* Slightly more advanced styling for each next card */
+.card-2 {
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  border: 2px solid #eee;
+}
+
+.card-3 {
+  box-shadow: 0 8px 14px rgba(0,0,0,0.18);
+  border: 3px solid #ddd;
+}
+
+.card-4 {
+  box-shadow: 0 10px 18px rgba(0,0,0,0.22);
+  border: 4px solid #ccc;
+}
+
+/* Show class triggers animation */
+.card.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 16px;
+/* Card text */
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
   color: #222;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 28px;
-  color: #555;
+.card p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  color: #444;
+  max-width: 280px;
 }
 
-/* Button styles */
-.btn {
+/* Black button inside cards */
+.btn-black {
   display: inline-block;
-  padding: 12px 28px;
-  background-color: #007bff;
+  background-color: #111;
   color: white;
+  padding: 14px 28px;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 10px;
   transition: background-color 0.3s ease;
   font-size: 1.1rem;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-/* Secondary button for other sections */
-.btn.btn-secondary {
-  background-color: #555;
-}
-
-.btn.btn-secondary:hover {
-  background-color: #333;
-}
-
-/* Info sections */
-.info {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  margin-bottom: 60px;
+  width: 120px;
   text-align: center;
 }
 
-.info.show {
-  opacity: 1;
-  transform: translateY(0);
+.btn-black:hover {
+  background-color: #444;
 }
 
-.info h2 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-  color: #222;
-}
+/* Responsive - center cards on smaller screens */
+@media (max-width: 600px) {
+  .content {
+    padding: 0 15px 60px;
+  }
 
-.info p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  color: #444;
+  .card {
+    width: 280px;
+    height: 280px;
+  }
 }
