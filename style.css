@@ -2,15 +2,15 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #fdfdfd;
-  color: #1a1a1a;
+  background-color: #fff;
+  color: #222;
 }
 
 /* Sticky navbar */
 .navbar {
   position: sticky;
   top: 0;
-  background: #111;
+  background: #222;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -24,7 +24,7 @@ body {
   font-weight: bold;
 }
 
-/* Hamburger menu (clean X animation) */
+/* Hamburger menu */
 .hamburger {
   width: 30px;
   height: 20px;
@@ -76,7 +76,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #222;
+  background-color: #333;
   overflow-x: hidden;
   transition: width 0.3s ease;
   padding-top: 60px;
@@ -97,50 +97,51 @@ body {
 }
 
 .sidebar a:hover {
-  background-color: #333;
+  background-color: #444;
 }
 
 /* Page content */
 .content {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 20px;
+  margin-left: 0; /* no margin since sidebar overlays */
+  transition: margin-left 0.3s ease;
 }
 
-/* Hero Section (New) */
+/* Slide-up animation */
+@keyframes slideUpFade {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #fff 0%, #f3f3f3 100%);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  color: #111;
+.hero.show {
+  animation: slideUpFade 0.8s ease-out forwards;
 }
 
-.hero p {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+/* Image container with background */
+.img-container {
+  background: #f0f0f0;    /* light gray background */
+  padding: 10px;          /* spacing around image */
+  border-radius: 8px;     /* rounded corners */
+  max-width: 100%;        /* responsive */
+  display: inline-block;  /* shrink-wrap */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
 }
 
-.hero-button {
-  padding: 12px 24px;
-  background-color: #111;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.hero-button:hover {
-  background-color: #333;
+.img-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px; /* slightly rounded corners */
 }
