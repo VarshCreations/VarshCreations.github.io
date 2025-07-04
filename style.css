@@ -1,11 +1,9 @@
-/* Base and Background */
+/* Base reset and font */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
-  background-attachment: fixed;
-  background-size: cover;
-  overflow-x: hidden;
+  background: #f9f9f9; /* subtle off-white background */
+  color: #222;
 }
 
 /* Sticky navbar */
@@ -22,7 +20,7 @@ body {
 }
 
 .logo {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -45,17 +43,27 @@ body {
   left: 0;
 }
 
-.hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 9px; }
-.hamburger span:nth-child(3) { top: 18px; }
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 9px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 18px;
+}
 
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg);
   top: 9px;
 }
+
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg);
   top: 9px;
@@ -92,112 +100,106 @@ body {
   background-color: #444;
 }
 
-/* Content */
+/* Page content */
 .content {
-  padding: 40px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
 }
 
-/* Slide-up base */
-.section,
-.welcome-section,
-.testimonial-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.section.visible,
-.welcome-section.visible,
-.testimonial-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* General section layout */
-.section {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
+/* Hero Section */
+.hero-section {
+  background: rgba(150, 200, 255, 0.2);
+  border-radius: 15px;
   padding: 60px 30px;
-  margin: 60px 20px;
-  color: #222;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
   text-align: center;
 }
 
-.section h2 {
-  font-size: 28px;
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Boxes Style */
+.box-section {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+  padding: 40px 30px;
+  margin-bottom: 50px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.box-section.alt {
+  background: #f0f8ff;
+}
+
+.box-heading {
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.section p {
-  font-size: 17px;
-  margin-bottom: 30px;
+.box-section p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #444;
 }
 
+/* Button style */
 .btn {
-  background-color: #000;
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
   display: inline-block;
+  background: #222;
+  color: white;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  min-width: 140px;
 }
 
 .btn:hover {
-  background-color: #444;
-}
-
-/* Welcome section */
-.welcome-section {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 100px 30px;
-  margin-top: 40px;
-  text-align: center;
-  border-radius: 16px;
-  color: #000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.welcome-section h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.welcome-section p {
-  font-size: 18px;
-  color: #444;
+  background: #555;
 }
 
 /* Testimonials */
 .testimonial-section {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 60px 30px;
-  margin: 60px 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+  padding: 40px 30px;
+  margin-bottom: 50px;
   text-align: center;
-  color: #111;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
-}
-
-.testimonial-section h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
 }
 
 .testimonial {
   margin-bottom: 25px;
   font-style: italic;
+  color: #555;
 }
 
 .testimonial span {
   display: block;
-  margin-top: 5px;
+  margin-top: 8px;
   font-weight: bold;
-  color: #333;
+  color: #222;
+}
+
+/* Animation for slide-up */
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
