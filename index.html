@@ -3,91 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varsh Custom Creations</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <title>Varsh | Home</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Sidebar + Navbar -->
+  <!-- Navbar -->
   <div class="navbar">
     <div class="logo">VARSH</div>
     <div class="hamburger" onclick="toggleMenu(this)">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
-  <aside id="mySidebar" class="sidebar">
-    <a href="index.html" onclick="closeMenu()">Home</a>
-    <a href="order.html" onclick="closeMenu()">Order From Us!</a>
-    <a href="about.html" onclick="closeMenu()">About Us</a>
-    <a href="contact.html" onclick="closeMenu()">Contact Us!</a>
-    <a href="locations.html" onclick="closeMenu()">Locations</a>
-    <a href="reviews.html" onclick="closeMenu()">Reviews</a>
-    <a href="make-review.html" onclick="closeMenu()">Make A Review</a>
-  </aside>
 
-  <main>
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="index.html" onclick="toggleMenuFromLink()">Home</a>
+    <a href="order.html" onclick="toggleMenuFromLink()">Order From Us!</a>
+    <a href="about.html" onclick="toggleMenuFromLink()">About Us</a>
+    <a href="contact.html" onclick="toggleMenuFromLink()">Contact Us!</a>
+    <a href="locations.html" onclick="toggleMenuFromLink()">Locations</a>
+    <a href="review.html" onclick="toggleMenuFromLink()">Rate Us!</a>
+  </div>
 
-    <!-- Hero -->
-    <section class="hero hero-animated">
+  <!-- Main Content -->
+  <div class="content">
+
+    <!-- Welcome Section -->
+    <section class="welcome-section slide-up">
       <h1>Welcome to Varsh Custom Creations & More</h1>
-      <p>Scroll down for more</p>
+      <p>Scroll down for more info</p>
     </section>
 
-    <!-- Feature Grid -->
-    <section class="features">
-      <div class="feature-card">✨<h3>Personalized Gifts</h3></div>
-      <div class="feature-card">👕<h3>Custom Apparel</h3></div>
-      <div class="feature-card">🏠<h3>Home Decor</h3></div>
+    <!-- Section 1 -->
+    <section class="section slide-up">
+      <h2>Order Something Custom</h2>
+      <p>Get unique, personalized designs made just for you. We bring your ideas to life.</p>
+      <a href="order.html" class="btn">Order Now</a>
     </section>
 
-    <!-- Split Section -->
-    <section class="split highlight">
-      <div class="split-img"></div>
-      <div class="split-text">
-        <h2>Order Something Custom</h2>
-        <p>Design your dream piece with our expert touch.</p>
-        <a href="order.html" class="btn">Order Now</a>
+    <!-- Section 2 -->
+    <section class="section slide-up">
+      <h2>Explore Our Creations</h2>
+      <p>Browse through our gallery of past work and get inspired by our custom pieces made for our customers.</p>
+      <a href="about.html" class="btn">See Our Work</a>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section slide-up">
+      <h2>Find a Location Near You</h2>
+      <p>We're growing fast! Check out where you can find Varsh services in your city. (Currently Only 1 Location!)</p>
+      <a href="locations.html" class="btn">View Locations</a>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="section slide-up">
+      <h2>Questions? We're Here.</h2>
+      <p>Reach out to us if you have custom ideas, bulk orders, or just want to chat. We're happy to help!</p>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial-section slide-up">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonial">
+        <p>"Varsh brought my vision to life better than I imagined!"</p>
+        <span>– Customer</span>
+      </div>
+      <div class="testimonial">
+        <p>"I got a one-of-a-kind piece and the process was so smooth. I 100% recommend!"</p>
+        <span>– Customer</span>
+      </div>
+      <div class="testimonial">
+        <p>"Super fast, high-quality, and affordable custom work!"</p>
+        <span>– Customer</span>
+        <p></p>
+        <a href="review.html" class="btn">Rate Us!</a>
       </div>
     </section>
 
-    <!-- Timeline -->
-    <section class="timeline">
-      <div><span class="step">1</span><p>You Choose</p></div>
-      <div><span class="step">2</span><p>We Create</p></div>
-      <div><span class="step">3</span><p>You Receive</p></div>
-    </section>
+  </div>
 
-    <!-- Testimonials Carousel -->
-    <section class="testimonials">
-      <div class="testimonial-track">
-        <div class="testimonial-box">“Amazing quality & quick delivery.”<footer>– Customer</footer></div>
-        <div class="testimonial-box">“They nailed my vision exactly.”<footer>– Customer</footer></div>
-        <div class="testimonial-box">“Can't recommend them enough.”<footer>– Customer</footer></div>
-      </div>
-      <a href="reviews.html" class="btn">Read More Reviews</a>
-    </section>
+  <!-- Scripts -->
+  <script>
+    function toggleMenu(icon) {
+      icon.classList.toggle("open");
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.classList.toggle("open");
+    }
 
-    <!-- Gallery Strip -->
-    <section class="gallery">
-      <div class="gallery-item">Item 1</div>
-      <div class="gallery-item">Item 2</div>
-      <div class="gallery-item">Item 3</div>
-      <div class="gallery-item">Item 4</div>
-    </section>
+    function toggleMenuFromLink() {
+      const icon = document.querySelector(".hamburger");
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.classList.remove("open");
+      icon.classList.remove("open");
+    }
 
-    <!-- Contact CTA -->
-    <section class="cta">
-      <h2>Need Something Custom?</h2>
-      <a href="contact.html" class="btn btn-highlight">Contact Us</a>
-    </section>
+    // Slide-up animation on scroll
+    const slideSections = document.querySelectorAll('.slide-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-  </main>
-
-<script>
-function toggleMenu(icon){ icon.classList.toggle('open'); document.getElementById('mySidebar').classList.toggle('open'); }
-function closeMenu(){ document.querySelector('.hamburger').classList.remove('open'); document.getElementById('mySidebar').classList.remove('open'); }
-</script>
+    slideSections.forEach(section => observer.observe(section));
+  </script>
 
 </body>
 </html>
