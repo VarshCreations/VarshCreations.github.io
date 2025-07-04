@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VARSH Custom And Creations</title>
+  <title>Varsh Custom And Creations</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+  <!-- Your CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -22,17 +25,48 @@
 
   <!-- Sidebar -->
   <aside id="mySidebar" class="sidebar">
-    <a href="#" onclick="closeMenu()">Home</a>
-    <a href="#" onclick="closeMenu()">Order From Us!</a>
-    <a href="#" onclick="closeMenu()">About Us</a>
-    <a href="#" onclick="closeMenu()">Contact Us!</a>
-    <a href="#" onclick="closeMenu()">Locations</a>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="order.html" onclick="closeMenu()">Order From Us!</a>
+    <a href="about.html" onclick="closeMenu()">About Us</a>
+    <a href="contact.html" onclick="closeMenu()">Contact Us!</a>
+    <a href="locations.html" onclick="closeMenu()">Locations</a>
   </aside>
 
-  <!-- Main Content -->
+  <!-- Main content -->
   <main>
-    <h1>Welcome to VARSH</h1>
-    <p>This is your homepage content.</p>
+    <!-- Hero / First Section -->
+    <section class="hero fade-up">
+      <h1>Order Something Custom From Us</h1>
+      <p>Transform your vision into extraordinary custom creations with premium personalized gifts, artistic designs, custom apparel, and home decor.</p>
+      <a href="order.html" class="btn btn-black">Order Now</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="content-section fade-up delay-1">
+      <h2>About Us</h2>
+      <p>Discover our passion for crafting unique custom pieces tailored just for you.</p>
+      <a href="about.html" class="btn btn-white">Learn More</a>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="content-section fade-up delay-2">
+      <h2>Our Locations</h2>
+      <p>Find us in multiple locations with the same commitment to quality and design.</p>
+      <a href="locations.html" class="btn btn-white">View Locations</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section fade-up delay-3">
+      <h2>Contact Us</h2>
+      <p>Got questions? We’re here to help with your next custom order.</p>
+      <a href="contact.html" class="btn btn-white">Get in Touch</a>
+    </section>
+
+    <!-- Ready to Start Section -->
+    <section class="ready-to-start fade-up delay-4">
+      <h2>Ready to start your custom creation?</h2>
+      <a href="order.html" class="btn btn-black">Get Started</a>
+    </section>
   </main>
 
   <script>
@@ -40,11 +74,27 @@
       icon.classList.toggle("open");
       document.getElementById("mySidebar").classList.toggle("open");
     }
-
     function closeMenu() {
       document.getElementById("mySidebar").classList.remove("open");
       document.querySelector(".hamburger").classList.remove("open");
     }
+
+    // Animation on scroll
+    const faders = document.querySelectorAll('.fade-up');
+    const appearOptions = {
+      threshold: 0,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
   </script>
 </body>
 </html>
