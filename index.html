@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VARSH Custom And Creations</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,89 +22,29 @@
 
   <!-- Sidebar -->
   <aside id="mySidebar" class="sidebar">
-    <a href="index.html" onclick="toggleMenuFromLink()">Home</a>
-    <a href="order.html" onclick="toggleMenuFromLink()">Order From Us!</a>
-    <a href="about.html" onclick="toggleMenuFromLink()">About Us</a>
-    <a href="contact.html" onclick="toggleMenuFromLink()">Contact Us!</a>
-    <a href="locations.html" onclick="toggleMenuFromLink()">Locations</a>
+    <a href="#" onclick="closeMenu()">Home</a>
+    <a href="#" onclick="closeMenu()">Order From Us!</a>
+    <a href="#" onclick="closeMenu()">About Us</a>
+    <a href="#" onclick="closeMenu()">Contact Us!</a>
+    <a href="#" onclick="closeMenu()">Locations</a>
   </aside>
 
-  <!-- Main content -->
+  <!-- Main Content -->
   <main>
-    <section class="hero slide-up">
-      <div class="hero-content">
-        <h1>Order Something Custom From Us</h1>
-        <p>Premium personalized gifts, artistic designs, and bespoke creations.</p>
-        <a href="order.html" class="btn">Order Now</a>
-      </div>
-      <div class="hero-image">[Your image here]</div>
-    </section>
-
-    <section class="features slide-up">
-      <h2>Why Choose Us?</h2>
-      <div class="feature-cards">
-        <div class="feature-card">
-          <h3>Quality</h3>
-          <p>Only the finest materials and craftsmanship go into every product.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Customization</h3>
-          <p>Designs tailored exactly to your vision and style.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Fast Shipping</h3>
-          <p>Get your custom orders quickly with reliable delivery.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="gallery slide-up">
-      <h2>Our Work</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">Image 1</div>
-        <div class="gallery-item">Image 2</div>
-        <div class="gallery-item">Image 3</div>
-        <div class="gallery-item">Image 4</div>
-        <div class="gallery-item">Image 5</div>
-        <div class="gallery-item">Image 6</div>
-      </div>
-    </section>
-
-    <section class="testimonials slide-up">
-      <h2>What Our Customers Say</h2>
-      <blockquote>
-        <p>"Amazing quality and fast service!"</p>
-        <footer>- Customer</footer>
-      </blockquote>
-      <blockquote>
-        <p>"Custom design exactly how I imagined."</p>
-        <footer>- Customer</footer>
-      </blockquote>
-      <blockquote>
-        <p>"Highly recommend for unique gifts."</p>
-        <footer>- Customer</footer>
-      </blockquote>
-    </section>
-
-    <section class="cta slide-up">
-      <h2>Ready to start your custom creation?</h2>
-      <a href="order.html" class="btn">Get Started</a>
-    </section>
+    <h1>Welcome to VARSH</h1>
+    <p>This is your homepage content.</p>
   </main>
 
   <script>
-    // Hamburger toggle
     function toggleMenu(icon) {
       icon.classList.toggle("open");
-      const sidebar = document.getElementById("mySidebar");
-      sidebar.classList.toggle("open");
+      document.getElementById("mySidebar").classList.toggle("open");
     }
 
-    function toggleMenuFromLink() {
-      const icon = document.querySelector(".hamburger");
-      const sidebar = document.getElementById("mySidebar");
-      sidebar.classList.remove("open");
-      icon.classList.remove("open");
+    function closeMenu() {
+      document.getElementById("mySidebar").classList.remove("open");
+      document.querySelector(".hamburger").classList.remove("open");
     }
-
-    // Slide up animation on scroll
+  </script>
+</body>
+</html>
