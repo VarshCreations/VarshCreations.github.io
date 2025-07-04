@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Varsh | Home</title>
 
   <!-- Google Font -->
@@ -28,31 +28,37 @@
     <a href="index.html" onclick="toggleMenuFromLink()">Home</a>
     <a href="order.html" onclick="toggleMenuFromLink()">Order From Us!</a>
     <a href="about.html" onclick="toggleMenuFromLink()">About Us</a>
+    <a href="contact.html" onclick="toggleMenuFromLink()">Contact Us!</a>
     <a href="locations.html" onclick="toggleMenuFromLink()">Locations</a>
-    <a href="contact.html" onclick="toggleMenuFromLink()">Contact Us</a>
   </div>
 
   <!-- Page content -->
   <div class="content">
+
     <section class="hero">
-      <h1>Welcome to Varsh Custom And Creations</h1>
-      <p>Transform your vision into extraordinary custom creations.</p>
+      <h1>Order Something Custom From Us!</h1>
+      <p>We make your ideas come to life with premium custom designs.</p>
+      <a href="order.html" class="btn">Order From Us</a>
     </section>
 
-    <!-- Example image container with instructions -->
-    <section style="margin-top: 40px;">
-      <h2>Example of Image with Background</h2>
-      <p>Wrap your image in a <code>div</code> with the class <code>img-container</code> like this:</p>
-      
-      <div class="img-container" style="max-width:300px;">
-        <!-- Replace the src below with your actual image -->
-        <img src="https://via.placeholder.com/300x200.png?text=Your+Image+Here" alt="Sample Image" />
-      </div>
-      
-      <p style="margin-top: 10px; font-style: italic; color: #555;">
-        Replace the above placeholder image with your own image file.
-      </p>
+    <section class="info">
+      <h2>About Us</h2>
+      <p>Learn more about our story and passion for custom design.</p>
+      <a href="about.html" class="btn btn-secondary">About Us</a>
     </section>
+
+    <section class="info">
+      <h2>Locations</h2>
+      <p>Find a Varsh location near you and visit us in person.</p>
+      <a href="locations.html" class="btn btn-secondary">Locations</a>
+    </section>
+
+    <section class="info">
+      <h2>Contact Us</h2>
+      <p>Have questions or want to get in touch? Reach out anytime.</p>
+      <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+    </section>
+
   </div>
 
   <!-- JavaScript -->
@@ -70,13 +76,20 @@
       icon.classList.remove("open");
     }
 
-    // Slide up hero section on load
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('load', () => {
       const hero = document.querySelector('.hero');
       if (hero) {
         hero.classList.add('show');
       }
+      const infoSections = document.querySelectorAll('.info');
+      infoSections.forEach((section, i) => {
+        // Stagger info sections fade in
+        setTimeout(() => {
+          section.classList.add('show');
+        }, 400 * (i + 1));
+      });
     });
   </script>
+
 </body>
 </html>
