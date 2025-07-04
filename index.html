@@ -13,9 +13,7 @@
   <div class="navbar">
     <div class="logo">VARSH</div>
     <div class="hamburger" onclick="toggleMenu(this)">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </div>
 
@@ -30,54 +28,93 @@
 
   <!-- Page content -->
   <div class="content">
-    <section class="card slide-up">
-      <h2>Order Something Custom</h2>
-      <p>Get a unique custom item made just for you!</p>
-      <a class="card-btn" href="order.html">Order Now</a>
+
+    <!-- Hero -->
+    <section class="hero card animate">
+      <h1>Order Something Custom</h1>
+      <p>Bring your ideas to life with personalized creations.</p>
+      <a href="order.html" class="btn">Order Now</a>
     </section>
 
-    <section class="card slide-up">
-      <h2>Learn More About Us</h2>
-      <p>Discover who we are and what drives us.</p>
-      <a class="card-btn" href="about.html">About Us</a>
+    <!-- About Us -->
+    <section class="card animate">
+      <h2>About Us</h2>
+      <p>Learn more about Varsh and how we bring your ideas to life.</p>
+      <a href="about.html" class="btn">About Us</a>
     </section>
 
-    <section class="card slide-up">
+    <!-- Locations -->
+    <section class="card animate">
       <h2>Our Locations</h2>
-      <p>See where you can find Varsh near you!</p>
-      <a class="card-btn" href="locations.html">View Locations</a>
+      <p>Visit us in person or find a location near you.</p>
+      <a href="locations.html" class="btn">See Locations</a>
     </section>
 
-    <section class="card slide-up">
+    <!-- Contact -->
+    <section class="card animate">
       <h2>Contact Us</h2>
-      <p>Have questions? Reach out to us here.</p>
-      <a class="card-btn" href="contact.html">Contact</a>
+      <p>We’d love to hear from you! Reach out anytime.</p>
+      <a href="contact.html" class="btn">Contact</a>
     </section>
+
+    <!-- Gallery -->
+    <section class="card animate">
+      <h2>Featured Creations</h2>
+      <p>[Image placeholders of products go here]</p>
+      <a href="order.html" class="btn">See More</a>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="card animate">
+      <h2>Why Choose Varsh?</h2>
+      <ul>
+        <li>✨ High-quality custom designs</li>
+        <li>🎁 Unique gifts and personalized items</li>
+        <li>🚚 Fast turnaround and delivery</li>
+      </ul>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="card animate">
+      <h2>What Our Customers Say</h2>
+      <p>“Absolutely loved my custom mug!” — Sarah</p>
+      <p>“They nailed every detail. Will order again.” — Jordan</p>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta animate">
+      <h2>Ready to start your custom order?</h2>
+      <a href="order.html" class="btn">Order Now</a>
+    </section>
+
   </div>
 
   <script>
     function toggleMenu(icon) {
       icon.classList.toggle("open");
-      document.getElementById("mySidebar").classList.toggle("open");
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.classList.toggle("open");
     }
 
     function toggleMenuFromLink() {
-      document.querySelector(".hamburger").classList.remove("open");
-      document.getElementById("mySidebar").classList.remove("open");
+      const icon = document.querySelector(".hamburger");
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.classList.remove("open");
+      icon.classList.remove("open");
     }
 
     // Slide-up animation on scroll
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
+    }, {
+      threshold: 0.1
     });
 
-    document.querySelectorAll('.slide-up').forEach(card => {
-      observer.observe(card);
-    });
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
   </script>
 
 </body>
