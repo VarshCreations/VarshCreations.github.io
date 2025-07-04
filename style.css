@@ -2,13 +2,15 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
+  background-color: #fdfdfd;
+  color: #1a1a1a;
 }
 
 /* Sticky navbar */
 .navbar {
   position: sticky;
   top: 0;
-  background: #222;
+  background: #111;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -22,7 +24,7 @@ body {
   font-weight: bold;
 }
 
-/* Hamburger menu (cleaner X animation) */
+/* Hamburger menu (clean X animation) */
 .hamburger {
   width: 30px;
   height: 20px;
@@ -67,14 +69,14 @@ body {
   top: 9px;
 }
 
-/* Sidebar (left side) */
+/* Sidebar */
 .sidebar {
   height: 100%;
   width: 0;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #333;
+  background-color: #222;
   overflow-x: hidden;
   transition: width 0.3s ease;
   padding-top: 60px;
@@ -95,10 +97,50 @@ body {
 }
 
 .sidebar a:hover {
-  background-color: #444;
+  background-color: #333;
 }
 
 /* Page content */
 .content {
-  padding: 20px;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Hero Section (New) */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fff 0%, #f3f3f3 100%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-button {
+  padding: 12px 24px;
+  background-color: #111;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #333;
 }
