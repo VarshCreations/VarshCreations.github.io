@@ -4,11 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Varsh | Home</title>
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-
-  <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -34,64 +30,53 @@
 
   <!-- Page content -->
   <div class="content">
-
-    <!-- Hero Section 1 -->
-    <section class="card fade-in">
+    <section class="card slide-up">
       <h2>Order Something Custom</h2>
-      <p>Bring your ideas to life with our personalized design services.</p>
-      <a href="order.html" class="card-btn">Order Now</a>
+      <p>Get a unique custom item made just for you!</p>
+      <a class="card-btn" href="order.html">Order Now</a>
     </section>
 
-    <!-- Hero Section 2 -->
-    <section class="card fade-in">
-      <h2>Who We Are</h2>
-      <p>Explore our story and meet the creatives behind the brand.</p>
-      <a href="about.html" class="card-btn">About Us</a>
+    <section class="card slide-up">
+      <h2>Learn More About Us</h2>
+      <p>Discover who we are and what drives us.</p>
+      <a class="card-btn" href="about.html">About Us</a>
     </section>
 
-    <!-- Hero Section 3 -->
-    <section class="card fade-in">
-      <h2>Find Us Near You</h2>
-      <p>Visit our locations to browse, pick up, or connect in person.</p>
-      <a href="locations.html" class="card-btn">View Locations</a>
+    <section class="card slide-up">
+      <h2>Our Locations</h2>
+      <p>See where you can find Varsh near you!</p>
+      <a class="card-btn" href="locations.html">View Locations</a>
     </section>
 
-    <!-- Hero Section 4 -->
-    <section class="card fade-in">
-      <h2>Let’s Stay in Touch</h2>
-      <p>Have questions or need help? Reach out to our friendly team.</p>
-      <a href="contact.html" class="card-btn">Contact Us</a>
+    <section class="card slide-up">
+      <h2>Contact Us</h2>
+      <p>Have questions? Reach out to us here.</p>
+      <a class="card-btn" href="contact.html">Contact</a>
     </section>
-
   </div>
 
-  <!-- JavaScript -->
   <script>
     function toggleMenu(icon) {
       icon.classList.toggle("open");
-      const sidebar = document.getElementById("mySidebar");
-      sidebar.classList.toggle("open");
+      document.getElementById("mySidebar").classList.toggle("open");
     }
 
     function toggleMenuFromLink() {
-      const icon = document.querySelector(".hamburger");
-      const sidebar = document.getElementById("mySidebar");
-      sidebar.classList.remove("open");
-      icon.classList.remove("open");
+      document.querySelector(".hamburger").classList.remove("open");
+      document.getElementById("mySidebar").classList.remove("open");
     }
 
-    // Scroll animation
-    const fadeInSections = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
+    // Slide-up animation on scroll
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.1 });
+    });
 
-    fadeInSections.forEach(section => {
-      observer.observe(section);
+    document.querySelectorAll('.slide-up').forEach(card => {
+      observer.observe(card);
     });
   </script>
 
