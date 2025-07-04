@@ -2,8 +2,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #fafafa;
-  color: #222;
+  background: #f7f7f7;
 }
 
 /* Sticky navbar */
@@ -43,17 +42,9 @@ body {
   left: 0;
 }
 
-.hamburger span:nth-child(1) {
-  top: 0;
-}
-
-.hamburger span:nth-child(2) {
-  top: 9px;
-}
-
-.hamburger span:nth-child(3) {
-  top: 18px;
-}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 9px; }
+.hamburger span:nth-child(3) { top: 18px; }
 
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg);
@@ -102,98 +93,67 @@ body {
 
 /* Content area */
 .content {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 0 20px 80px;
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   gap: 60px;
-  align-items: center;
 }
 
-/* Card styles - exact square blocks */
+/* Hero card styles */
 .card {
   background: white;
-  width: 320px;
-  height: 320px; /* perfect square */
   border-radius: 20px;
-  padding: 30px;
-  box-sizing: border-box;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 60px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  text-align: center;
   opacity: 0;
-  transform: translateY(40px) scale(0.9);
+  transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  margin: 0 auto;
 }
 
-/* Slightly more advanced styling for each next card */
-.card-2 {
-  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-  border: 2px solid #eee;
-}
-
-.card-3 {
-  box-shadow: 0 8px 14px rgba(0,0,0,0.18);
-  border: 3px solid #ddd;
-}
-
-.card-4 {
-  box-shadow: 0 10px 18px rgba(0,0,0,0.22);
-  border: 4px solid #ccc;
-}
-
-/* Show class triggers animation */
-.card.show {
+.card.visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
-/* Card text */
 .card h2 {
   font-size: 1.8rem;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+  margin-top: -10px;
   color: #222;
+  text-wrap: balance;
 }
 
 .card p {
   font-size: 1.1rem;
-  margin-bottom: 24px;
+  margin: 0 auto 20px auto;
+  max-width: 260px;
   color: #444;
-  max-width: 280px;
 }
 
-/* Black button inside cards */
-.btn-black {
+.card-btn {
   display: inline-block;
   background-color: #111;
   color: white;
-  padding: 14px 28px;
+  padding: 20px;
+  border-radius: 12px;
+  font-weight: bold;
   text-decoration: none;
-  font-weight: 600;
-  border-radius: 10px;
+  width: 60px;
+  height: 60px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s ease;
-  font-size: 1.1rem;
-  width: 120px;
-  text-align: center;
 }
 
-.btn-black:hover {
-  background-color: #444;
-}
-
-/* Responsive - center cards on smaller screens */
-@media (max-width: 600px) {
-  .content {
-    padding: 0 15px 60px;
-  }
-
-  .card {
-    width: 280px;
-    height: 280px;
-  }
+.card-btn:hover {
+  background-color: #333;
 }
