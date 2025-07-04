@@ -17,23 +17,15 @@ body {
   padding: 15px 30px;
   z-index: 1000;
 }
-
 .logo {
   font-weight: 800;
   font-size: 1.4rem;
 }
-
 .hamburger {
-  width: 30px;
-  height: 20px;
-  position: relative;
-  cursor: pointer;
+  width: 30px; height: 20px; position: relative; cursor: pointer;
 }
 .hamburger span {
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: #333;
+  position: absolute; height: 2px; width: 100%; background: #333;
   transition: transform .3s, top .3s, opacity .3s;
 }
 .hamburger span:nth-child(1) { top: 0; }
@@ -52,17 +44,14 @@ body {
 /* Sidebar */
 .sidebar {
   position: fixed;
-  left: 0; top: 0;
-  height: 100vh;
+  top: 0; left: 0;
+  height: 100vh; width: 0;
   background: #fff;
-  width: 0; overflow: hidden;
   box-shadow: 2px 0 8px rgba(0,0,0,0.1);
   transition: width .3s;
   z-index: 999;
 }
-.sidebar.open {
-  width: 250px;
-}
+.sidebar.open { width: 250px; }
 .sidebar a {
   display: block;
   padding: 20px;
@@ -70,9 +59,7 @@ body {
   color: #333;
   border-bottom: 1px solid #eee;
 }
-.sidebar a:hover {
-  background: #f4f4f4;
-}
+.sidebar a:hover { background: #f4f4f4; }
 
 /* Sections */
 .content { padding: 0 20px; }
@@ -121,11 +108,11 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.05);
 }
-.feature-card h2 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+.features.alt {
+  background: #f2f7ff;
+  padding: 60px 20px;
+  border-radius: 12px;
 }
-.features.alt { background: #f2f7ff; padding: 60px 20px; border-radius: 12px; }
 
 /* Gallery */
 .gallery-grid {
@@ -143,12 +130,13 @@ body {
 /* Testimonials */
 .testimonials {
   background: #fff;
-  border-radius: 12px;
   padding: 60px 20px;
+  border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.05);
 }
 .testimonials h2 {
-  margin-bottom: 30px; font-size: 2rem;
+  margin-bottom: 30px;
+  font-size: 2rem;
 }
 .testimonial {
   font-style: italic;
@@ -163,10 +151,12 @@ body {
   padding: 60px 20px;
 }
 .cta h2 {
-  font-size: 2.2rem; font-weight: 600; margin-bottom: 20px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-/* Buttons */
+/* Button */
 .btn {
   padding: 14px 32px;
   background: #0070f3;
@@ -179,6 +169,15 @@ body {
 }
 .btn:hover {
   background: #0059c1;
+}
+
+/* Alternating section backgrounds */
+.features.alt,
+.testimonials.alt {
+  background: #f2f7ff;
+}
+.section.alt {
+  background: #f2f7ff;
 }
 
 /* Responsive */
