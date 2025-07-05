@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varsh | Locations</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">VARSH</div>
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="index.html" onclick="toggleMenuFromLink()">Home</a>
+    <a href="order.html" onclick="toggleMenuFromLink()">Order From Us!</a>
+    <a href="about.html" onclick="toggleMenuFromLink()">About Us</a>
+    <a href="contact.html" onclick="toggleMenuFromLink()">Contact Us!</a>
+    <a href="locations.html" onclick="toggleMenuFromLink()">Locations</a>
+  </div>
+
+
+  <!-- Page content -->
+  <div class="content">
+    <section id="contact">
+  <h2>Find Us</h2>
+  <p>Come visit us at our Lafayette location!</p>
+  <!-- Google Map Embed -->
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.2049815086854!2d-86.8538023!3d40.3922939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88131cf76c30f2f5%3A0x1e73697770793518!2s2415%20Sagamore%20Pkwy%20S%2C%20Lafayette%2C%20IN%2047905!5e0!3m2!1sen!2sus!4v1719765727194!5m2!1sen!2sus" 
+  width="100%" 
+  height="400" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+      <p>2415 Sagamore Pkwy S in Tippecanoe Mall</p>
+</section>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu(icon) {
+      icon.classList.toggle("open");
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.classList.toggle("open");
+    }
+
+    function toggleMenuFromLink() {
+      const icon = document.querySelector(".hamburger");
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.classList.remove("open");
+      icon.classList.remove("open");
+    }
+  </script>
+
+</body>
+</html>
