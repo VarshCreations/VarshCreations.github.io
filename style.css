@@ -136,6 +136,7 @@ body {
   margin-bottom: 30px;
 }
 
+/* Buttons */
 .btn {
   background-color: #000;
   color: white;
@@ -146,6 +147,7 @@ body {
   font-weight: bold;
   transition: background-color 0.3s ease;
   display: inline-block;
+  margin: 10px;
 }
 
 .btn:hover {
@@ -173,7 +175,7 @@ body {
   color: #444;
 }
 
-/* Testimonials */
+/* Testimonials (not used here but kept for consistency) */
 .testimonial-section {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
