@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varsh | Order</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">VARSH</div>
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="index.html" onclick="toggleMenuFromLink()">Home</a>
+    <a href="order.html" onclick="toggleMenuFromLink()">Order From Us!</a>
+    <a href="about.html" onclick="toggleMenuFromLink()">About Us</a>
+    <a href="contact.html" onclick="toggleMenuFromLink()">Contact Us!</a>
+    <a href="locations.html" onclick="toggleMenuFromLink()">Locations</a>
+  </div>
+
+
+  <!-- Main Content -->
+  <div class="content">
+
+    <!-- Welcome Section -->
+    <section class="welcome-section slide-up">
+      <h1>Ready to Start your Order?</h1>
+      <a href="shop.html" class="btn">Yes</a>
+       <a href="index.html" class="btn">No</a>
+    </section>
+
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu(icon) {
+      icon.classList.toggle("open");
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.classList.toggle("open");
+    }
+
+    function toggleMenuFromLink() {
+      const icon = document.querySelector(".hamburger");
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.classList.remove("open");
+      icon.classList.remove("open");
+    }
+  </script>
+
+</body>
+</html>
