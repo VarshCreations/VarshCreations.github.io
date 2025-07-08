@@ -19,7 +19,6 @@ body {
   align-items: center;
   padding: 15px 20px;
   z-index: 1000;
-  height: 60px; /* fix height */
 }
 
 .logo {
@@ -72,7 +71,7 @@ body {
   background-color: #333;
   overflow-x: hidden;
   transition: width 0.3s ease;
-  padding-top: 60px; /* space for navbar */
+  padding-top: 60px;
   z-index: 999;
 }
 
@@ -95,38 +94,43 @@ body {
 
 /* Content */
 .content {
-  margin-left: 250px;      /* space for sidebar */
-  margin-top: 60px;        /* space for navbar */
-  height: calc(100vh - 60px); /* fill remaining height */
-  display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 40px 20px;
 }
 
-/* Section styling */
+/* Slide-up base */
+.section,
+.welcome-section,
+.testimonial-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible,
+.welcome-section.visible,
+.testimonial-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* General section layout */
 .section {
-  max-width: 700px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 60px 30px;
+  margin: 60px 20px;
   color: #222;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  /* Center text inside section */
   text-align: center;
 }
 
-/* Headings */
 .section h2 {
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-/* Paragraphs */
 .section p {
   font-size: 17px;
   margin-bottom: 30px;
@@ -155,10 +159,10 @@ body {
   background: rgba(255, 255, 255, 0.15);
   padding: 100px 30px;
   margin-top: 40px;
+  text-align: center;
   border-radius: 16px;
   color: #000;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  text-align: center;
 }
 
 .welcome-section h1 {
